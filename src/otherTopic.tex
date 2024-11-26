@@ -1,0 +1,12 @@
+\section{其他问题}
+1. 我还尝试了一些其他的想法，对结果没有显著的提升，因此上文中没有提及。如(a)只对SDS路径使用$g(x)$。(b)proposal pdf仍然使用$f(x)$。(a)(b)的结果反而变差了。(c)Large step 目标分布使用$g(x)$, small step使用$f(x)$。(c)无法收敛到正确的结果（根据我自己的推导和资料查阅，理论上，两种不同目标分布的马尔科夫过程也难以线性组合，我没有得到组合后稳态分布的表达式）。
+
+2. 在MALA的源码中，通过检测样本stuck达到一定次数后（我在本文实验中，使用的默认设置10000次），会强制将样本设为初始态，这样可以移除极端的noise。我尝试了将这个次数阈值减小，虽然可以更大程度上减少noise，但是这也会破坏Markov过程，使得结果有偏。
+
+3.对于场景中包含ES*L路径的情况，往往会出现一小块过曝区域主导MSE，加上$\alpha$较小时，MSE很不稳定，不利于分析实验。
+
+4.在实验中，我产生了一个与本项目无关的想法，这里提出来，向老师请教一下。对于Visibility很难搞的场景，比如光源通过小孔或者细缝照入场景，这使得哪怕是基于梯度的small step也很容易采到visibility无效的区域。然而实际上，在MLT过程中，有很多沿着细缝的成功样本可以利用。因此或许可以考虑利用这些样本矫正small step的proposal gaussian分布，从而使得mutation时以更高的概率沿着门缝采样。一种思路是，利用若干个历史样本估计当前样本primary space局部的visibility分布，将这一分布乘到原本的gaussian上。这种思路的潜在问题在于visibility未必容易刻画，刻画错了有时也可能带来额外cost。另一种思路是，想办法将visibility“软化”，得到visibility的近似微分，改进原有的梯度，得到包含visibility的梯度之后再proposal。
+
+5.依然是一个与本项目无关的想法。假设Markov矩阵$M_1, M2, ...,M_n$都有相同的稳态分布$f$，易知对于$M=\sum_{i=1}^n \lambda_iM_i, where \sum_{i=0}^n \lambda_i = 1$，M的稳态分布依然是$f$。$\prod_{i=1}^n M_i$得到的新Markov矩阵也收敛到$f$。也就是说，可以将任意Proposal策略“并联”（线性组合）或者“串联”，仍然可以得到正确的MLT算法。LargeStep和SmallStep实际上就是两种Proposal的“并联”。同样的，将其他的MLT算法并联或者串联，或许可以平衡优劣，同时避免某种算法多次stuck形成noise点的几率。
+
+\label{sec:otherTopic}

@@ -1,0 +1,9 @@
+\section{回顾与总结}
+\label{sec:sum}
+\noindent \textbf{回顾：}\\
+\indent 我们将MLT中路径贡献函数记作$f(x)$,其中$x$是primary space中的一点。通常在MLT中，我们一般将$f(x)$作为目标分布函数，实际上，我们也可以改变这一目标分布(新分布记作$g(x)$),同时将样本权重调整为($\frac{f(x)}{g(x)}$)，依然可以得到unbiased结果。对于包含sds路径的场景，即使是primary space下的$f(x)$，其有效区域依然是嵌入在全空间的低维流形。因此，我尝试将$g(x)$取为更加平坦的函数(如将$g(x)$取为场景中Specular物体的roughness放大后对应的路径贡献)。\textcolor{red}{$g(x)$的跳转接受率更高，但同时也会由于概率分布和真实贡献不同，引入额外的方差。（参见 \boldnameref{sec:cost}）}\\
+
+\noindent \textbf{实验总结：}\\
+\indent \textcolor{red}{在本阶段的实验中，我们发现随着场景中specular物体的增多，$g(x)$逐渐体现出更大的优势（MSE比$f(x)$的结果更低）。直观上的解释是：Specular物体的增多会导致完全不连通的sds pattern增多，遍历这些pattern只能通过large step跳转样本；而$g(x)$的large step接受率更高（Table \ref{tab:accept}），使得这些pattern之间的整体亮度比例可以更快地收敛。（实验验证 参见 \boldnameref{sec:benefit}）}
+
+%另一方面，目标分布与实际的差异会引入额外的方差(可利用柯西积分不等式证明)。直观的解释是，在MH采样过程中部分样本stuck多次且$\frac{f(x)}{g(x)}$较大时，会放大误差，从而产生noise点。样本权重$\frac{f(x)}{g(x)}$较小时，也会降低稀释noise的能力。（参见 \boldnameref{sec:cost}）

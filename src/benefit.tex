@@ -1,0 +1,46 @@
+
+\section{g(x)优点的验证}
+\label{sec:benefit}
+如Table \ref{tab:accept}所示，$g(x)$的接受率更高，尤其是large step较为显著，这使得不同sds区域之间的亮度比例可以更快收敛。Figure \ref{fig:Grid9PyramidFigMALA}、Figure \ref{fig:Grid100SphereFigH2MC}、Figure \ref{fig:Grid25TeapotFigMALA}分别以\textbf{Grid9Pyramid}、\textbf{Grid100Sphere}、\textbf{Grid25Teapot}为例展示了图片结果。通过error map可以更清晰地看出对于不同区域间亮度比例，$g(x)$收敛得更快，从而验证了上述分析。如Figure \ref{fig:GridPyramidMSE}、Figure \ref{fig:GridSphereMSE}、Figure \ref{fig:GridTeapotMSE}的MSE曲线所示，随着物体数量M的增加，场景中有更多完全不连通的sds区域，$g(x)$的优势更加明显。
+
+\begin{table}[hb]
+\centering
+\begin{tabular}{|c|c|c|c|c|c|c|c|}
+% \hline
+% Grid25Pyramid-h2mc & l & l & l & s & s & s\\
+\hline
+Grid[M]Scene & M & f Large & $g_{1.25}$ Large & $g_{1.5}$ Large & f Small & $g_{1.25}$ Small & $g_{1.5}$ Small \\
+\hline
+\multirow{4}{*}{Grid[M]Pyramid} & 1 & 0.001351 & 0.002024 & 0.002766 & 0.5064 & 0.5132 & 0.5221\\
+\cline{2-8} & 9 & 0.000988 & 0.00148 & 0.00204 & 0.3604 & 0.3631 & 0.3686\\
+\cline{2-8} & 25 & 0.001205 & 0.001806 & 0.002492 & 0.290 & 0.2915 & 0.2958\\
+\cline{2-8} & 100 & 0.001214 & 0.001809 & 0.002492 & 0.1608 & 0.1618 & 0.1642\\
+\hline
+\multirow{4}{*}{Grid[M]Sphere} & 1 & 0.0360 & 0.03873 & 0.04123 & 0.3946 & 0.4132 & 0.4339\\
+\cline{2-8} & 9 & 0.02481 & 0.0267 & 0.02821 & 0.3589 & 0.3559 & 0.3574\\
+\cline{2-8} & 25 & 0.02903 & 0.03135 & 0.03307 & 0.3324 & 0.3271 & 0.3255\\
+\cline{2-8} & 100 & 0.02732 & 0.02964 & 0.03144 & 0.3016 & 0.2932 & 0.2878\\
+\hline
+\multirow{4}{*}{Grid[M]Teapot} & 1 & 0.00583 & 0.006402 & 0.006882 & 0.3478 & 0.3609 & 0.3704\\
+\cline{2-8} & 9 & 0.006155 & 0.006661 & 0.007075 & 0.2439 & 0.2509 & 0.2547\\
+\cline{2-8} & 25  & 0.007798 & 0.008409 & 0.008967 & 0.2169 & 0.2207 & 0.2224\\
+\cline{2-8} & 100 & 0.007922 & 0.008557 & 0.009073 & 0.1880 & 0.1889 & 0.1879\\
+\hline
+% Grid9Pyramid-mala & 0.000987 & 0.00148 & 0.00204 & 0.2688 & 0.3298 & 0.3780\\
+% \hline
+% Grid100Sphere-mala & 0.02708 & 0.02941 & 0.03127 & 0.03293 & 0.04783 & 0.06356\\
+% \hline
+% Grid25Teapot-mala & 0.007857 & 0.008491 & 0.009032 & 0.06045 & 0.08629 & 0.1102\\
+% \hline
+\end{tabular}
+\caption{Grid场景中，H2MC的接受率}
+\label{tab:accept}
+\end{table}
+
+\clearpage
+\input{src/figureTex/gridMSE}
+\input{src/figureTex/gridFig}
+\clearpage
+
+
+

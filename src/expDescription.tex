@@ -1,0 +1,25 @@
+\section{算法配置与实验场景}
+\label{sec:desc}
+\subsection{算法配置说明}
+本次实验中透明材质为rough dielectric, 其NDF采用Beckman模型，粗糙度由$\alpha$描述；反射材质为phong模型(mala源码支持的模型)，粗糙度由exponent描述。本报告中默认$g_k(x)$表示将$\alpha$放大$k$倍，exponent缩小$k$倍后得到的路径贡献。由于MALA的源码中，direct path是直接渲染的，MLT只需要负责indirect path (bounce次数大于等于2)。因此，\textcolor{red}{本报告中所有图片都是render indirect path的图片，并将其normalize到相同平均亮度以排除不必要的干扰。}
+
+\subsection{实验场景}
+如无特殊标注，光源为一个很小的面光源，位于场景斜上方，本报告涉及到的场景如下:
+
+\begin{enumerate}[(1)]
+    \item \textbf{Grid[M]Pyramid}: Diffuse的地板上放置M个透明的金字塔，位置上排成网格，M=1,4,9,25,100。
+    \item \textbf{Grid[M]Sphere}: Diffuse的地板上放置M个透明的圆球，位置上排成网格，M=1,4,9,25,100。
+    \item \textbf{Grid[M]Teapot}: Diffuse的地板上放置M个透明茶壶(使用的是Veachdoor场景中的mesh)，位置上排成网格，M=1,4,9,25,100。
+    % \item \textbf{Grid[M]TeapotRefl}: Diffuse的地板上放置M个phong材质的茶壶(使用的是Veachdoor场景中的mesh)，位置上排成网格，M=1,4,9,25,100。
+    \item \textbf{PlaneSphere05}: Diffuse的地板上放置了半个表面有所起伏的透明球(05只是建模时试了不同起伏程度的编号，不用管)。
+    \item \textbf{Slab}: SMS文中的场景。
+    % \item \textbf{PlaneSlab}: 将Slab的曲面横置于Diffuse的地板上。
+    \item \textbf{Veachdoor}: 同MALA源码中的场景，门缝外有一个较大的面光源。
+    \item \textbf{Torus}: 同MALA源码中的场景，光源为环境光sunsky。
+\end{enumerate}
+
+
+
+
+
+

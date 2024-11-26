@@ -1,0 +1,76 @@
+\begin{figure}
+\begin{minipage}{\textwidth}
+\centering  
+\addtolength{\tabcolsep}{-5.0pt}
+\begin{tabular}{c}
+\begin{overpic}[width=\ResultFigWidth]{\GridFig{Pyramid}{9}{mala}}\end{overpic} \\
+\begin{overpic}[width=\ResultFigWidth]{\GridErrFig{Pyramid}{9}{mala}}
+    \put(14.3, 0){\begin{tikzpicture}[x=1pt,y=1pt]
+        \draw[red,ultra thick] (0,0) rectangle (67.5,208);
+    \end{tikzpicture}}
+    \put(28.7, 0){\begin{tikzpicture}[x=1pt,y=1pt]
+        \draw[red,ultra thick] (0,0) rectangle (67.5,208);
+    \end{tikzpicture}}
+    \put(43, 0){\begin{tikzpicture}[x=1pt,y=1pt]
+        \draw[red,ultra thick] (0,0) rectangle (67.5,208);
+    \end{tikzpicture}}
+\end{overpic} \\
+\end{tabular}
+\end{minipage}
+\caption{Grid9Pyramid-MALA: 第一行为$f(x)$的结果，第二行为$g_{1.25}(x)$，第三行为$g_{1.5}(x)$。后三行是对应的error map。通过error map的第二三四列都可以看出，$f(x)$的error map的区域间相对亮度误差更大。}
+\label{fig:Grid9PyramidFigMALA}
+\end{figure}
+
+\begin{figure}
+\begin{minipage}{\textwidth}
+\centering  
+\addtolength{\tabcolsep}{-5.0pt}
+\begin{tabular}{c}
+\begin{overpic}[width=\ResultFigWidth]{\GridFig{Sphere}{100}{h2mc}}\end{overpic} \\
+\begin{overpic}[width=\ResultFigWidth]{\GridErrFig{Sphere}{100}{h2mc}}
+    \put(7.4, 34.2){\begin{tikzpicture}[x=1pt,y=1pt]
+        \draw[red, thick] (0,0) rectangle (10,10);
+    \end{tikzpicture}}
+    \put(21.8, 34.2){\begin{tikzpicture}[x=1pt,y=1pt]
+        \draw[red, thick] (0,0) rectangle (10,10);
+    \end{tikzpicture}}
+    \put(36.2, 34.2){\begin{tikzpicture}[x=1pt,y=1pt]
+        \draw[red, thick] (0,0) rectangle (10,10);
+    \end{tikzpicture}}
+    \put(38.7, 31.7){\begin{tikzpicture}[x=1pt,y=1pt]
+        \draw[red, thick] (0,0) rectangle (10,10);
+    \end{tikzpicture}}
+    \put(50.6, 34.2){\begin{tikzpicture}[x=1pt,y=1pt]
+        \draw[red, thick] (0,0) rectangle (10,10);
+    \end{tikzpicture}}
+    \put(53.1, 31.7){\begin{tikzpicture}[x=1pt,y=1pt]
+        \draw[red, thick] (0,0) rectangle (10,10);
+    \end{tikzpicture}}
+    \put(65, 34.2){\begin{tikzpicture}[x=1pt,y=1pt]
+        \draw[red, thick] (0,0) rectangle (10,10);
+    \end{tikzpicture}}
+    \put(11.3, 16.2){\begin{tikzpicture}[x=1pt,y=1pt]
+        \draw[red, thick] (0,0) rectangle (10,10);
+    \end{tikzpicture}}
+    \put(25.7, 16.2){\begin{tikzpicture}[x=1pt,y=1pt]
+        \draw[red, thick] (0,0) rectangle (10,10);
+    \end{tikzpicture}}
+\end{overpic} \\
+\end{tabular}
+\end{minipage}
+\caption{Grid100Sphere-H2MC: 通过error map可以看出，$g_{1.25}(x)$和$g{1.5}(x)$相较于$f(x)$，各个区域亮度分配更均匀。}
+\label{fig:Grid100SphereFigH2MC} 
+\end{figure}
+
+\begin{figure}
+\begin{minipage}{\textwidth}
+\centering  
+\addtolength{\tabcolsep}{-5.0pt}
+\begin{tabular}{c}
+\begin{overpic}[width=\ResultFigWidth]{\GridFig{Teapot}{25}{mala}}\end{overpic} \\
+\begin{overpic}[width=\ResultFigWidth]{\GridErrFig{Teapot}{25}{mala}}\end{overpic} \\
+\end{tabular}
+\end{minipage}
+\caption{Grid25Teapot-MALA 这一场景中茶壶来自veachdoor中的mesh，从MSE来看，$g(x)$仍然优于$f(x)$的结果。}
+\label{fig:Grid25TeapotFigMALA}
+\end{figure}

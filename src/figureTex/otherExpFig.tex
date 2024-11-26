@@ -1,0 +1,72 @@
+\begin{figure}
+\begin{minipage}{\textwidth}
+\centering  
+\addtolength{\tabcolsep}{-5.0pt}
+ \begin{tabular}{ ccc }
+\begin{overpic}[width=0.3\textwidth]{results/PlaneScenes/PlanePyramid/alpha0.01/mse-chain_32-h2mc.png}\end{overpic}
+& \begin{overpic}[width=0.3\textwidth]{results/PlaneScenes/PlanePyramid/alpha0.01/mse-chain_128-h2mc.png}\end{overpic}
+& \begin{overpic}[width=0.3\textwidth]{results/PlaneScenes/PlanePyramid/alpha0.01/mse-chain_512-h2mc.png}\end{overpic}
+\\
+\end{tabular}
+\end{minipage}
+\caption{\textbf{PlanePyramid},$\alpha=0.01$，H2MC. 固定总样本数，改变chain数量，从左到右依次为32，128，512。}
+\label{fig:ChainNumMSE}
+\end{figure}
+
+\begin{figure}
+\begin{minipage}{\textwidth}
+\centering  
+\addtolength{\tabcolsep}{-5.0pt}
+ \begin{tabular}{ ccc }
+\begin{overpic}[width=0.3\textwidth]{results/PlaneScenes/PlanePyramid/alpha0.01/mse-pssMLT.png}\end{overpic}
+& \begin{overpic}[width=0.3\textwidth]{results/PlaneScenes/PlanePyramid/alpha0.01/mse-chain_128-h2mc.png}\end{overpic}
+& \begin{overpic}[width=0.3\textwidth]{results/PlaneScenes/PlanePyramid/alpha0.01/mse-mala.png}\end{overpic}
+\\
+\end{tabular}
+\end{minipage}
+\caption{\textbf{PlanePyramid},$\alpha=0.01$. 不同的small mutaion策略，依次为PSSMLT, H2MC, MALA}
+\label{fig:MutationMSE}
+\end{figure}
+
+
+\begin{figure}
+\begin{minipage}{\textwidth}
+\centering  
+\addtolength{\tabcolsep}{-5.0pt}
+ \begin{tabular}{ c }
+\begin{overpic}[width=0.7\textwidth]{results/PlaneScenes/PlanePyramid/alpha0.01/mse-roughinterpolation.png}\end{overpic}
+\\
+\end{tabular}
+\end{minipage}
+\caption{\textbf{PlanePyramid},$\alpha=0.01$. 图例中的后三种$g(x)$为$g_k(x)$到$f(x)$的插值。可以看出，$g(x)$的曲线在$g_k(x)$和$f(x)$(蓝色曲线)之间，k=1.25, 1.5, 2.0（这是早期的一个实验结果图，当时没有将图片亮度normalize，MSE的量级和本文其他地方不一致；且当时用了一个seed，因而曲线有些抖动）。}
+\label{fig:gxInterpolation}
+\end{figure}
+
+\begin{figure}
+\begin{minipage}{\textwidth}
+\centering  
+\renewcommand{\arraystretch}{0.35}
+\addtolength{\tabcolsep}{-5.0pt}
+\begin{tabular}{ cccc }
+\begin{overpic}[width=0.24\textwidth]{results/Slab/alpha0.01/mse-h2mc.png}\end{overpic}
+& \begin{overpic}[width=0.24\textwidth]{results/PlaneScenes/PlaneSphere05/alpha0.01/mse-h2mc.png}\end{overpic}
+& \begin{overpic}[width=0.24\textwidth]{results/PlaneScenes/PlaneSphere05/alpha0.1/mse-h2mc.png}\end{overpic}
+& \begin{overpic}[width=0.24\textwidth]{results/GridScenes/GridSphere05/Grid25/alpha0.1/mse-h2mc.png}\end{overpic}
+\\
+\begin{overpic}[width=0.24\textwidth]{results/Slab/alpha0.01/reference-pt.png}
+\put(77, 60){\begin{tikzpicture}[x=1pt,y=1pt]
+    \draw[red, thick] (0,0) rectangle (10,10);
+\end{tikzpicture}}
+\end{overpic}
+& \begin{overpic}[width=0.24\textwidth]{results/PlaneScenes/PlaneSphere05/alpha0.01/reference-pt.png}\end{overpic}
+& \begin{overpic}[width=0.24\textwidth]{results/PlaneScenes/PlaneSphere05/alpha0.1/reference-pt.png}\end{overpic}
+& \begin{overpic}[width=0.24\textwidth]{results/GridScenes/GridSphere05/Grid25/alpha0.1/reference-pt.png}\end{overpic}
+\\
+\textbf{Slab}, $\alpha=0.01$ & \textbf{PlaneSphere05}, $\alpha=0.01$ & \textbf{PlaneSphere05}, $\alpha=0.1$ & \textbf{Grid25Sphere05}, $\alpha=0.1$
+\end{tabular}
+\end{minipage}
+\caption{我们还测试了几个其他的场景，这里展示一下reference图以及对应的H2MC MSE曲线。其中Slab的MSE受到图中红色框内的一小块ES*L区域的影响，MSE很不稳定（也正因如此，在本报告中的场景设置中，我尽量避免了此类情况的发生）。\textbf{PlaneSphere05} $\alpha$越大, $\frac{f}{g}$越平坦，MSE曲线越接近；\textbf{Grid25Sphere05}的结果也说明，随着specular物体增多，SDS pattern增多，$g(x)$优势也会增大。}
+\label{fig:MoreScene}
+\end{figure}
+
+

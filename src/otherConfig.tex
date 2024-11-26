@@ -1,0 +1,6 @@
+\section{更多其他配置的实验}
+\label{sec:otherConfig}
+我们也测试了其他的一些情况，如不同Chain数量(Figure \ref{fig:ChainNumMSE})，不同的small mutation策略(Figure \ref{fig:MutationMSE})。将$g(x)$取为$g_k(x)$和$f(x)$的插值，并逐渐趋近于$f(x)$ (Figure \ref{fig:gxInterpolation})，这种情况下$g(x)$的MSE曲线会夹在$g_k(x)$和$f(x)$之间。这里如果是另一种思路，对large step使用$g_k(x)$，small step逐渐插值到$f(x)$，这么做会使得Markov的目标分布一直在$f$和$g$之间来回震荡，破坏了收敛性，数学上得不到正确的(unbiased)结果。
+
+我们还测试了\textbf{Slab}，\textbf{PlaneSphere05}，\textbf{Grid25Sphere05}等，场景以及MSE如Figure \ref{fig:MoreScene}所示。
+\input{src/figureTex/otherExpFig}

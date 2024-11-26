@@ -1,0 +1,42 @@
+\documentclass{article}
+% \usepackage{enumitem}
+\usepackage{enumerate}
+\usepackage[english]{babel}
+% \usepackage[utf8]{inputenc}
+\usepackage{ctex}
+% \usepackage[style=authoryear]{biblatex}
+% \addbibresource{sample.bib}
+% \newlist{steps}{enumerate}{1}
+% \setlist[steps, 1]{label = Step \arabic*:}
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=2cm,right=2cm,marginparwidth=1.75cm]{geometry}
+
+% Useful packages
+\usepackage{nameref}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{lipsum}
+\usepackage{caption}
+\usepackage{tikz}
+\usepackage{subfig}
+\usepackage{float}
+\usepackage{overpic}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{multirow}
+%\usepackage{hyperref}
+\input{src/commonDef}
+\date{}
+\title{实验报告}
+
+\begin{document}
+
+\maketitle
+\indent 本报告首先文字性总结一下目前得到的结论(\boldnameref{sec:sum})。之后介绍一下实验场景与算法的默认配置(\boldnameref{sec:desc})。然后展示具体验证结论的rendering结果图片以及MSE曲线(\boldnameref{sec:benefit},\boldnameref{sec:cost})。之后会展示一些不同配置的情况,比如更改alpha,MLT算法,Chain数量等(\boldnameref{sec:otherConfig})。最后是一些我在实验过程中观察到的一些现象，以及一些想法，想和大家讨论一下(\boldnameref{sec:otherTopic})。
+\input{src/summary}
+\input{src/expDescription}
+\input{src/benefit}
+\input{src/cost}
+\clearpage
+\input{src/otherConfig}
+\clearpage
+\input{src/otherTopic}
+\end{document}

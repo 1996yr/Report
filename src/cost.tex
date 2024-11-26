@@ -1,0 +1,18 @@
+\section{g(x)缺点的验证}
+\label{sec:cost}
+$g(x)$与真实贡献分布不一致会引入noise，并且随着$\alpha$的减小，$g(x)$带来的noise效应更加明显（如Figure \ref{fig:CostFigA0.1}($\alpha=0.1$)、Figure \ref{fig:CostFigA0.01}($\alpha=0.01$)、Figure \ref{fig:CostFigA0.005}($\alpha=0.005$)所示）。这里可以做一个近似的定量解释：
+
+primaray space的$f(x) = \frac{L(path)}{P_{bdpt}(path)}$, 对于SDS路径, 实际的BDPT构造过程只能在其中一个Specular点上importance采样，另一个Specular点会直接连接Diffuse点（如ESD + SL或者ES+DSL）。无论哪一种，我们抛开一些平滑的项，近似得到$f(x)\approx BSDF(\theta)$，$\theta$为LightPath和EyePath连接处Specular点的法向与半角向量的夹角。进一步考虑NDF项，则有：
+
+\begin{align}
+\frac{f(x)}{g_k(x)} &\approx \frac{Beckman(\alpha, \theta)}{Beckman(k*\alpha, \theta)} \\
+  &= \frac{(k*\alpha)^2}{\alpha^2} * e^{-\frac{tan^2\theta}{\alpha^2} + \frac{tan^2\theta}{(k*\alpha)^2}}\\
+  &= k^2 * e^{-\frac{tan^2\theta}{\alpha^2} * (1 - \frac{1}{k^2})}
+\end{align}
+
+可以看出，对于相同的$g(x)$(即固定$k$)，$\alpha$越小，$\frac{f}{g}$随着$\theta$的变化越剧烈，导致概率分布和真实分布的差异越大，从而使得noise效应越明显。
+
+我在Veachdoor和Torus中，也观察到了$g(x)$类似的缺陷（Figure \ref{fig:CostFigVeachdoor}, Figure \ref{fig:CostFigTorus}）。
+\input{src/figureTex/costFig}
+
+

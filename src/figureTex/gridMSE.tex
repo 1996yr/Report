@@ -1,0 +1,63 @@
+\begin{figure}
+\begin{minipage}{\textwidth}
+\centering  
+\renewcommand{\arraystretch}{0.35}
+\addtolength{\tabcolsep}{-5.0pt}
+ \begin{tabular}{ ccccc }
+\begin{overpic}[width=\gridMseFigWidth]{\GridMSE{Pyramid}{1}{h2mc}}\end{overpic}
+& \begin{overpic}[width=\gridMseFigWidth]{\GridMSE{Pyramid}{4}{h2mc}}\end{overpic}
+& \begin{overpic}[width=\gridMseFigWidth]{\GridMSE{Pyramid}{9}{h2mc}}\end{overpic}
+& \begin{overpic}[width=\gridMseFigWidth]{\GridMSE{Pyramid}{25}{h2mc}}\end{overpic}
+& \begin{overpic}[width=\gridMseFigWidth]{\GridMSE{Pyramid}{100}{h2mc}}\end{overpic}
+\\
+\begin{overpic}[width=\gridMseFigWidth]{\GridMSE{Pyramid}{1}{mala}}\end{overpic}
+& \begin{overpic}[width=\gridMseFigWidth]{\GridMSE{Pyramid}{4}{mala}}\end{overpic}
+& \begin{overpic}[width=\gridMseFigWidth]{\GridMSE{Pyramid}{9}{mala}}\end{overpic}
+& \begin{overpic}[width=\gridMseFigWidth]{\GridMSE{Pyramid}{25}{mala}}\end{overpic}
+& \begin{overpic}[width=\gridMseFigWidth]{\GridMSE{Pyramid}{100}{mala}}\end{overpic}
+\\
+\end{tabular}
+\end{minipage}
+\caption{Grid[M]PyramidMSE：Diffuse平面上摆放了M个透明金字塔，从左到右依次是M=1, 4, 9, 25, 100。第一行是h2mc的结果，第二行是mala的结果。图例中C128表示chain数量为128， P0.2表示large step的概率为0.2， roughScale表示$g(x)$对$\alpha$的放大程度，1.0表示$g(x)=f(x)$。从图中可以看到，随着M数量的增加，\textcolor{orange}{$g_{1.25}(x)$}和\textcolor{green}{$g_{1.5}(x)$}会优于\textcolor{blue}{$f(x)$}}
+\label{fig:GridPyramidMSE} 
+\end{figure}
+
+\begin{figure}
+\begin{minipage}{\textwidth}
+\centering  
+\addtolength{\tabcolsep}{-5.0pt}
+ \begin{tabular}{ ccccc }
+\begin{overpic}[width=\gridMseFigWidth]{\GridMSE{Sphere}{1}{h2mc}}\end{overpic}
+& \begin{overpic}[width=\gridMseFigWidth]{\GridMSE{Sphere}{4}{h2mc}}\end{overpic}
+& \begin{overpic}[width=\gridMseFigWidth]{\GridMSE{Sphere}{9}{h2mc}}\end{overpic}
+& \begin{overpic}[width=\gridMseFigWidth]{\GridMSE{Sphere}{25}{h2mc}}\end{overpic}
+& \begin{overpic}[width=\gridMseFigWidth]{\GridMSE{Sphere}{100}{h2mc}}\end{overpic}
+\\
+\end{tabular}
+\end{minipage}
+\caption{Grid[M]SphereMSE：Diffuse平面上摆放了M个透明玻璃球，从左到右依次是M=1, 4, 9, 25, 100。Small Step为H2MC。}
+\label{fig:GridSphereMSE} 
+\end{figure}
+
+\begin{figure}
+\begin{minipage}{\textwidth}
+\centering  
+\addtolength{\tabcolsep}{-5.0pt}
+ \begin{tabular}{ ccccc }
+\begin{overpic}[width=\gridMseFigWidth]{\GridMSE{Teapot}{1}{mala}}\end{overpic}
+& \begin{overpic}[width=\gridMseFigWidth]{\GridMSE{Teapot}{4}{mala}}\end{overpic}
+& \begin{overpic}[width=\gridMseFigWidth]{\GridMSE{Teapot}{9}{mala}}\end{overpic}
+& \begin{overpic}[width=\gridMseFigWidth]{\GridMSE{Teapot}{25}{mala}}\end{overpic}
+& \begin{overpic}[width=\gridMseFigWidth]{\GridMSE{Teapot}{100}{mala}}\end{overpic}
+\\
+% \begin{overpic}[width=\gridMseFigWidth]{\GridMSE{Teapot}{1}{h2mc}}\end{overpic}
+% & \begin{overpic}[width=\gridMseFigWidth]{\GridMSE{Teapot}{4}{h2mc}}\end{overpic}
+% & \begin{overpic}[width=\gridMseFigWidth]{\GridMSE{Teapot}{9}{h2mc}}\end{overpic}
+% & \begin{overpic}[width=\gridMseFigWidth]{\GridMSE{Teapot}{25}{h2mc}}\end{overpic}
+% & \begin{overpic}[width=\gridMseFigWidth]{\GridMSE{Teapot}{100}{h2mc}}\end{overpic}
+% \\
+\end{tabular}
+\end{minipage}
+\caption{Grid[M]TeapotMSE 在Diffuse平面上摆放了M个透明茶壶，从左到右依次是M=1, 4, 9, 25, 100。Small Step为MALA。}
+\label{fig:GridTeapotMSE} 
+\end{figure}
