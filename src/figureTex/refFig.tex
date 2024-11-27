@@ -1,0 +1,81 @@
+\begin{figure}
+\begin{minipage}{\textwidth}
+\centering  
+\renewcommand{\arraystretch}{0.35}
+\addtolength{\tabcolsep}{-5.0pt}
+ \begin{tabular}{ ccccc }
+ \vspace{0pt}
+\begin{overpic}[width=\gridMseFigWidth]{\GridFigRef{Pyramid}{1}{4}}\end{overpic}
+& \begin{overpic}[width=\gridMseFigWidth]{\GridFigRef{Pyramid}{4}{4}}\end{overpic}
+& \begin{overpic}[width=\gridMseFigWidth]{\GridFigRef{Pyramid}{9}{4}}\end{overpic}
+& \begin{overpic}[width=\gridMseFigWidth]{\GridFigRef{Pyramid}{25}{4}}\end{overpic}
+& \begin{overpic}[width=\gridMseFigWidth]{\GridFigRef{Pyramid}{100}{4}}\end{overpic}
+\\
+Grid1Pyramid & Grid4Pyramid & Grid9Pyramid
+& Grid25Pyramid & Grid100Pyramid \\
+\vspace{5pt}
+\\
+\begin{overpic}[width=\gridMseFigWidth]{\GridFigRef{Sphere}{1}{6}}\end{overpic}
+& \begin{overpic}[width=\gridMseFigWidth]{\GridFigRef{Sphere}{4}{6}}\end{overpic}
+& \begin{overpic}[width=\gridMseFigWidth]{\GridFigRef{Sphere}{9}{6}}\end{overpic}
+& \begin{overpic}[width=\gridMseFigWidth]{\GridFigRef{Sphere}{25}{6}}\end{overpic}
+& \begin{overpic}[width=\gridMseFigWidth]{\GridFigRef{Sphere}{100}{6}}\end{overpic}
+\\
+Grid1Sphere & Grid4Sphere & Grid9Sphere
+& Grid25Sphere & Grid100Sphere\\
+\vspace{5pt}
+\\
+\begin{overpic}[width=\gridMseFigWidth]{\GridFigRef{Teapot}{1}{6}}\end{overpic}
+& \begin{overpic}[width=\gridMseFigWidth]{\GridFigRef{Teapot}{4}{6}}\end{overpic}
+& \begin{overpic}[width=\gridMseFigWidth]{\GridFigRef{Teapot}{9}{6}}\end{overpic}
+& \begin{overpic}[width=\gridMseFigWidth]{\GridFigRef{Teapot}{25}{6}}\end{overpic}
+& \begin{overpic}[width=\gridMseFigWidth]{\GridFigRef{Teapot}{100}{6}}\end{overpic}
+\\
+Grid1Teapot & Grid4Teapot & Grid9Teapot
+& Grid25Teapot & Grid100Teapot \\
+\vspace{5pt}
+\\
+\end{tabular}
+\end{minipage}
+\caption{\textbf{Grid[M]Scene, $\alpha=0.1$}的reference图。}
+\label{fig:GridRef} 
+\end{figure}
+
+\begin{figure}
+\begin{minipage}{\textwidth}
+\centering  
+\renewcommand{\arraystretch}{0.35}
+\addtolength{\tabcolsep}{-5.0pt}
+ \begin{tabular}{ cccc }
+ \vspace{0pt}
+\begin{overpic}[width=0.24\textwidth]{\PlaneFigRef{Pyramid}{0.01}{4}}\end{overpic}
+& \begin{overpic}[width=0.24\textwidth]{\PlaneFigRef{Pyramid}{0.1}{4}}\end{overpic}
+& \begin{overpic}[width=0.24\textwidth]{\PlaneFigRef{Sphere05}{0.01}{4}}\end{overpic}
+& \begin{overpic}[width=0.24\textwidth]{\PlaneFigRef{Sphere05}{0.1}{4}}\end{overpic}\\
+PlanePyramid $\alpha=0.01$ & PlanePyramid $\alpha=0.1$ & PlaneSphere05 $\alpha=0.01$
+& PlaneSphere05 $\alpha=0.1$ \\
+\vspace{5pt}
+\\
+\end{tabular}
+\end{minipage}
+\caption{\textbf{PlanePyramid}和\textbf{PlaneSphere05}的reference, PlanePyramid和Grid1Pyramid视点和光源位置有点区别（布置grid场景时调整的）}
+\label{fig:PlaneRef} 
+\end{figure}
+
+
+\begin{figure}
+\begin{minipage}{\textwidth}
+\centering  
+\renewcommand{\arraystretch}{0.35}
+\addtolength{\tabcolsep}{-5.0pt}
+ \begin{tabular}{ cc }
+ \vspace{0pt}
+\begin{overpic}[width=0.45\textwidth]{\GridFigRef{Sphere05}{25}{4}}\end{overpic}
+& \begin{overpic}[width=0.45\textwidth]{results/Slab/alpha0.01/ref-normalize-ev-4.png}\end{overpic}
+\\
+Grid25Sphere05 $\alpha=0.1$ & Slab $\alpha=0.01$ \\
+\end{tabular}
+\end{minipage}
+\caption{\textbf{Grid25Sphere05}和\textbf{Slab}的reference}
+\label{fig:refFig} 
+\end{figure}

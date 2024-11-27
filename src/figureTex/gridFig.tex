@@ -1,28 +1,58 @@
 \begin{figure}
-\begin{minipage}{\textwidth}
+\begin{minipage}[t]{0.08\textwidth}
+\vspace{25pt}
+\textbf{$f(x)$} \\
+\\[31pt]
+\textbf{$g_{1.25}(x)$} \\
+\\[31pt]
+\textbf{$g_{1.5}(x)$} \\
+\\[31pt]
+\textbf{$f(x)$} \\
+\\[31pt]
+\textbf{$g_{1.25}(x)$} \\
+\\[31pt]
+\textbf{$g_{1.5}(x)$}
+\end{minipage}%
+\begin{minipage}[t]{0.92\textwidth}
+\vspace{0pt}
 \centering  
 \addtolength{\tabcolsep}{-5.0pt}
 \begin{tabular}{c}
 \begin{overpic}[width=\ResultFigWidth]{\GridFig{Pyramid}{9}{mala}}\end{overpic} \\
 \begin{overpic}[width=\ResultFigWidth]{\GridErrFig{Pyramid}{9}{mala}}
     \put(14.3, 0){\begin{tikzpicture}[x=1pt,y=1pt]
-        \draw[red,ultra thick] (0,0) rectangle (67.5,208);
+        \draw[red,ultra thick] (0,0) rectangle (61.5,190.2);
     \end{tikzpicture}}
     \put(28.7, 0){\begin{tikzpicture}[x=1pt,y=1pt]
-        \draw[red,ultra thick] (0,0) rectangle (67.5,208);
+        \draw[red,ultra thick] (0,0) rectangle (61.5,190.2);
     \end{tikzpicture}}
     \put(43, 0){\begin{tikzpicture}[x=1pt,y=1pt]
-        \draw[red,ultra thick] (0,0) rectangle (67.5,208);
+        \draw[red,ultra thick] (0,0) rectangle (62,190.2);
     \end{tikzpicture}}
 \end{overpic} \\
 \end{tabular}
 \end{minipage}
-\caption{Grid9Pyramid-MALA: 第一行为$f(x)$的结果，第二行为$g_{1.25}(x)$，第三行为$g_{1.5}(x)$。后三行是对应的error map。通过error map的第二三四列都可以看出，$f(x)$的error map的区域间相对亮度误差更大。}
+\caption{Grid9Pyramid-MALA 前三行为render的结果，后三行为error map。最后一列为使用的reference原图。通过error map的第二三四列都可以看出，$f(x)$的error map的区域间相对亮度误差更大。}
 \label{fig:Grid9PyramidFigMALA}
 \end{figure}
 
 \begin{figure}
-\begin{minipage}{\textwidth}
+\begin{minipage}[t]{0.08\textwidth}
+\vspace{25pt}
+\textbf{$f(x)$} \\
+\\[31pt]
+\textbf{$g_{1.25}(x)$} \\
+\\[31pt]
+\textbf{$g_{1.5}(x)$} \\
+\\[31pt]
+\textbf{$f(x)$} \\
+\\[31pt]
+\textbf{$g_{1.25}(x)$} \\
+\\[31pt]
+\textbf{$g_{1.5}(x)$}
+\end{minipage}%
+\begin{minipage}[t]{0.92\textwidth}
+\vspace{0pt}
 \centering  
 \addtolength{\tabcolsep}{-5.0pt}
 \begin{tabular}{c}
@@ -58,12 +88,27 @@
 \end{overpic} \\
 \end{tabular}
 \end{minipage}
-\caption{Grid100Sphere-H2MC: 通过error map可以看出，$g_{1.25}(x)$和$g{1.5}(x)$相较于$f(x)$，各个区域亮度分配更均匀。}
+\caption{Grid100Sphere-H2MC 前三行为render的结果，后三行为error map。最后一列为使用的reference原图。通过error map可以看出，$g_{1.25}(x)$和$g_{1.5}(x)$相较于$f(x)$，各个区域亮度分配更均匀。}
 \label{fig:Grid100SphereFigH2MC} 
 \end{figure}
 
 \begin{figure}
-\begin{minipage}{\textwidth}
+\begin{minipage}[t]{0.08\textwidth}
+\vspace{25pt}
+\textbf{$f(x)$} \\
+\\[31pt]
+\textbf{$g_{1.25}(x)$} \\
+\\[31pt]
+\textbf{$g_{1.5}(x)$} \\
+\\[31pt]
+\textbf{$f(x)$} \\
+\\[31pt]
+\textbf{$g_{1.25}(x)$} \\
+\\[31pt]
+\textbf{$g_{1.5}(x)$}
+\end{minipage}%
+\begin{minipage}[t]{0.92\textwidth}
+\vspace{0pt}
 \centering  
 \addtolength{\tabcolsep}{-5.0pt}
 \begin{tabular}{c}
@@ -71,6 +116,6 @@
 \begin{overpic}[width=\ResultFigWidth]{\GridErrFig{Teapot}{25}{mala}}\end{overpic} \\
 \end{tabular}
 \end{minipage}
-\caption{Grid25Teapot-MALA 这一场景中茶壶来自veachdoor中的mesh，从MSE来看，$g(x)$仍然优于$f(x)$的结果。}
+\caption{Grid25Teapot-MALA 前三行为render的结果，后三行为error map。最后一列为使用的reference原图。这一场景中茶壶来自veachdoor中的mesh，从MSE来看，$g(x)$仍然优于$f(x)$的结果。}
 \label{fig:Grid25TeapotFigMALA}
 \end{figure}

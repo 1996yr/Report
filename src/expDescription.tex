@@ -1,7 +1,7 @@
 \section{算法配置与实验场景}
 \label{sec:desc}
 \subsection{算法配置说明}
-本次实验中透明材质为rough dielectric, 其NDF采用Beckman模型，粗糙度由$\alpha$描述；反射材质为phong模型(mala源码支持的模型)，粗糙度由exponent描述。本报告中默认$g_k(x)$表示将$\alpha$放大$k$倍，exponent缩小$k$倍后得到的路径贡献。由于MALA的源码中，direct path是直接渲染的，MLT只需要负责indirect path (bounce次数大于等于2)。因此，\textcolor{red}{本报告中所有图片都是render indirect path的图片，并将其normalize到相同平均亮度以排除不必要的干扰。}
+本次实验中透明材质为rough dielectric, 其NDF采用Beckman模型，粗糙度由$\alpha$描述；反射材质为phong模型(mala源码支持的模型)，粗糙度由exponent描述。\textcolor{red}{本报告中默认$g_k(x)$表示将$\alpha$放大$k$倍，exponent缩小$k$倍后得到的路径贡献。本报告中出现的$g_{1.25}$和$g_{1.5}$对应于$k=1.25$和$k=1.5$。}由于MALA的源码中，direct path是直接渲染的，MLT只需要负责indirect path (bounce次数大于等于2)。因此，\textcolor{red}{本报告中所有图片都是render indirect path的图片，并将其normalize到相同平均亮度以排除不必要的干扰。包含direct和indirect的reference附于本报告最后，以供参考。}
 
 \subsection{实验场景}
 如无特殊标注，光源为一个很小的面光源，位于场景斜上方，本报告涉及到的场景如下:
